@@ -17,8 +17,27 @@
 		D7BED45D266AEF0A001C3990 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7BED45B266AEF0A001C3990 /* LaunchScreen.storyboard */; };
 		D7BED468266AEF0A001C3990 /* InstagramCloneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BED467266AEF0A001C3990 /* InstagramCloneTests.swift */; };
 		D7BED473266AEF0A001C3990 /* InstagramCloneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BED472266AEF0A001C3990 /* InstagramCloneUITests.swift */; };
-		D7BED489266AF555001C3990 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D7BED488266AF555001C3990 /* GoogleService-Info.plist */; };
-		D7BED48C266B052E001C3990 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D7BED48B266B052E001C3990 /* GoogleService-Info.plist */; };
+		D7BED48E266B05CC001C3990 /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BED48D266B05CC001C3990 /* ExploreViewController.swift */; };
+		D7BED490266B05D9001C3990 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BED48F266B05D9001C3990 /* CameraViewController.swift */; };
+		D7BED492266B05E4001C3990 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BED491266B05E4001C3990 /* NotificationsViewController.swift */; };
+		D7BED494266B05F2001C3990 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BED493266B05F2001C3990 /* ProfileViewController.swift */; };
+		D7BED496266B0620001C3990 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BED495266B0620001C3990 /* TabBarController.swift */; };
+		D7BED49A266B0651001C3990 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BED499266B0651001C3990 /* SignInViewController.swift */; };
+		D7BED49C266B0660001C3990 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BED49B266B0660001C3990 /* SignUpViewController.swift */; };
+		D7BED49E266B0679001C3990 /* CaptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BED49D266B0679001C3990 /* CaptionViewController.swift */; };
+		D7BED4A0266B0685001C3990 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BED49F266B0685001C3990 /* ListViewController.swift */; };
+		D7BED4A2266B0695001C3990 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BED4A1266B0695001C3990 /* PostViewController.swift */; };
+		D7BED4A4266B06A1001C3990 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BED4A3266B06A1001C3990 /* SettingsViewController.swift */; };
+		D7BED4A6266B06BF001C3990 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BED4A5266B06BF001C3990 /* User.swift */; };
+		D7BED4A8266B06CB001C3990 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BED4A7266B06CB001C3990 /* Post.swift */; };
+		D7BED4AA266B06D8001C3990 /* Relationship.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BED4A9266B06D8001C3990 /* Relationship.swift */; };
+		D7BED4AC266B06E5001C3990 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BED4AB266B06E5001C3990 /* Notification.swift */; };
+		D7BED4AE266B0704001C3990 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BED4AD266B0704001C3990 /* AuthManager.swift */; };
+		D7BED4B0266B0714001C3990 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BED4AF266B0714001C3990 /* DatabaseManager.swift */; };
+		D7BED4B2266B071F001C3990 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BED4B1266B071F001C3990 /* StorageManager.swift */; };
+		D7BED4B4266B0733001C3990 /* AnalyticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BED4B3266B0733001C3990 /* AnalyticsManager.swift */; };
+		D7BED4B6266B073D001C3990 /* HapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BED4B5266B073D001C3990 /* HapticsManager.swift */; };
+		D7BED4B8266B07E7001C3990 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D7BED4B7266B07E7001C3990 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,8 +79,27 @@
 		D7BED46E266AEF0A001C3990 /* InstagramCloneUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InstagramCloneUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7BED472266AEF0A001C3990 /* InstagramCloneUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramCloneUITests.swift; sourceTree = "<group>"; };
 		D7BED474266AEF0A001C3990 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D7BED488266AF555001C3990 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
-		D7BED48B266B052E001C3990 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D7BED48D266B05CC001C3990 /* ExploreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
+		D7BED48F266B05D9001C3990 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		D7BED491266B05E4001C3990 /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
+		D7BED493266B05F2001C3990 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		D7BED495266B0620001C3990 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		D7BED499266B0651001C3990 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		D7BED49B266B0660001C3990 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		D7BED49D266B0679001C3990 /* CaptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptionViewController.swift; sourceTree = "<group>"; };
+		D7BED49F266B0685001C3990 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		D7BED4A1266B0695001C3990 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
+		D7BED4A3266B06A1001C3990 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		D7BED4A5266B06BF001C3990 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		D7BED4A7266B06CB001C3990 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		D7BED4A9266B06D8001C3990 /* Relationship.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Relationship.swift; sourceTree = "<group>"; };
+		D7BED4AB266B06E5001C3990 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
+		D7BED4AD266B0704001C3990 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		D7BED4AF266B0714001C3990 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		D7BED4B1266B071F001C3990 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		D7BED4B3266B0733001C3990 /* AnalyticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsManager.swift; sourceTree = "<group>"; };
+		D7BED4B5266B073D001C3990 /* HapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsManager.swift; sourceTree = "<group>"; };
+		D7BED4B7266B07E7001C3990 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DD982C1C918F3D8720077A92 /* Pods_InstagramClone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstagramClone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -141,7 +179,6 @@
 		D7BED44F266AEF08001C3990 /* InstagramClone */ = {
 			isa = PBXGroup;
 			children = (
-				D7BED488266AF555001C3990 /* GoogleService-Info.plist */,
 				D7BED485266AEF9B001C3990 /* Views */,
 				D7BED484266AEF3B001C3990 /* Resources */,
 				D7BED483266AEF32001C3990 /* Managers */,
@@ -174,7 +211,8 @@
 		D7BED480266AEF1F001C3990 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				D7BED454266AEF08001C3990 /* HomeViewController.swift */,
+				D7BED498266B0635001C3990 /* Other */,
+				D7BED497266B0629001C3990 /* Core */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -189,6 +227,10 @@
 		D7BED482266AEF2D001C3990 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D7BED4A5266B06BF001C3990 /* User.swift */,
+				D7BED4A7266B06CB001C3990 /* Post.swift */,
+				D7BED4A9266B06D8001C3990 /* Relationship.swift */,
+				D7BED4AB266B06E5001C3990 /* Notification.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -196,6 +238,11 @@
 		D7BED483266AEF32001C3990 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				D7BED4AD266B0704001C3990 /* AuthManager.swift */,
+				D7BED4AF266B0714001C3990 /* DatabaseManager.swift */,
+				D7BED4B1266B071F001C3990 /* StorageManager.swift */,
+				D7BED4B3266B0733001C3990 /* AnalyticsManager.swift */,
+				D7BED4B5266B073D001C3990 /* HapticsManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -205,7 +252,7 @@
 			children = (
 				D7BED450266AEF08001C3990 /* AppDelegate.swift */,
 				D7BED452266AEF08001C3990 /* SceneDelegate.swift */,
-				D7BED48B266B052E001C3990 /* GoogleService-Info.plist */,
+				D7BED4B7266B07E7001C3990 /* GoogleService-Info.plist */,
 				D7BED459266AEF0A001C3990 /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -217,6 +264,32 @@
 				D7BED45B266AEF0A001C3990 /* LaunchScreen.storyboard */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		D7BED497266B0629001C3990 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				D7BED454266AEF08001C3990 /* HomeViewController.swift */,
+				D7BED48D266B05CC001C3990 /* ExploreViewController.swift */,
+				D7BED48F266B05D9001C3990 /* CameraViewController.swift */,
+				D7BED491266B05E4001C3990 /* NotificationsViewController.swift */,
+				D7BED493266B05F2001C3990 /* ProfileViewController.swift */,
+				D7BED495266B0620001C3990 /* TabBarController.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		D7BED498266B0635001C3990 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				D7BED499266B0651001C3990 /* SignInViewController.swift */,
+				D7BED49B266B0660001C3990 /* SignUpViewController.swift */,
+				D7BED49D266B0679001C3990 /* CaptionViewController.swift */,
+				D7BED49F266B0685001C3990 /* ListViewController.swift */,
+				D7BED4A1266B0695001C3990 /* PostViewController.swift */,
+				D7BED4A3266B06A1001C3990 /* SettingsViewController.swift */,
+			);
+			path = Other;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -328,9 +401,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7BED45D266AEF0A001C3990 /* LaunchScreen.storyboard in Resources */,
-				D7BED48C266B052E001C3990 /* GoogleService-Info.plist in Resources */,
 				D7BED45A266AEF0A001C3990 /* Assets.xcassets in Resources */,
-				D7BED489266AF555001C3990 /* GoogleService-Info.plist in Resources */,
+				D7BED4B8266B07E7001C3990 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -458,7 +530,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7BED49E266B0679001C3990 /* CaptionViewController.swift in Sources */,
+				D7BED48E266B05CC001C3990 /* ExploreViewController.swift in Sources */,
+				D7BED4AC266B06E5001C3990 /* Notification.swift in Sources */,
+				D7BED4B2266B071F001C3990 /* StorageManager.swift in Sources */,
+				D7BED4A0266B0685001C3990 /* ListViewController.swift in Sources */,
+				D7BED4A2266B0695001C3990 /* PostViewController.swift in Sources */,
+				D7BED496266B0620001C3990 /* TabBarController.swift in Sources */,
+				D7BED490266B05D9001C3990 /* CameraViewController.swift in Sources */,
+				D7BED4B4266B0733001C3990 /* AnalyticsManager.swift in Sources */,
 				D7BED455266AEF08001C3990 /* HomeViewController.swift in Sources */,
+				D7BED49C266B0660001C3990 /* SignUpViewController.swift in Sources */,
+				D7BED4A6266B06BF001C3990 /* User.swift in Sources */,
+				D7BED492266B05E4001C3990 /* NotificationsViewController.swift in Sources */,
+				D7BED4A4266B06A1001C3990 /* SettingsViewController.swift in Sources */,
+				D7BED4B0266B0714001C3990 /* DatabaseManager.swift in Sources */,
+				D7BED4AA266B06D8001C3990 /* Relationship.swift in Sources */,
+				D7BED4A8266B06CB001C3990 /* Post.swift in Sources */,
+				D7BED4AE266B0704001C3990 /* AuthManager.swift in Sources */,
+				D7BED49A266B0651001C3990 /* SignInViewController.swift in Sources */,
+				D7BED494266B05F2001C3990 /* ProfileViewController.swift in Sources */,
+				D7BED4B6266B073D001C3990 /* HapticsManager.swift in Sources */,
 				D7BED451266AEF08001C3990 /* AppDelegate.swift in Sources */,
 				D7BED453266AEF08001C3990 /* SceneDelegate.swift in Sources */,
 			);
