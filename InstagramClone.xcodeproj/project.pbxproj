@@ -179,12 +179,12 @@
 		D7BED44F266AEF08001C3990 /* InstagramClone */ = {
 			isa = PBXGroup;
 			children = (
-				D7BED485266AEF9B001C3990 /* Views */,
-				D7BED484266AEF3B001C3990 /* Resources */,
+				D7BED480266AEF1F001C3990 /* Controllers */,
 				D7BED483266AEF32001C3990 /* Managers */,
 				D7BED482266AEF2D001C3990 /* Models */,
+				D7BED484266AEF3B001C3990 /* Resources */,
+				D7BED485266AEF9B001C3990 /* Views */,
 				D7BED481266AEF27001C3990 /* ViewModels */,
-				D7BED480266AEF1F001C3990 /* Controllers */,
 				D7BED45E266AEF0A001C3990 /* Info.plist */,
 			);
 			path = InstagramClone;
