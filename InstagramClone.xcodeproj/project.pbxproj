@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,6 +17,8 @@
 		D7BED45D266AEF0A001C3990 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7BED45B266AEF0A001C3990 /* LaunchScreen.storyboard */; };
 		D7BED468266AEF0A001C3990 /* InstagramCloneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BED467266AEF0A001C3990 /* InstagramCloneTests.swift */; };
 		D7BED473266AEF0A001C3990 /* InstagramCloneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BED472266AEF0A001C3990 /* InstagramCloneUITests.swift */; };
+		D7BED489266AF555001C3990 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D7BED488266AF555001C3990 /* GoogleService-Info.plist */; };
+		D7BED48C266B052E001C3990 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D7BED48B266B052E001C3990 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,8 @@
 		D7BED46E266AEF0A001C3990 /* InstagramCloneUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InstagramCloneUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7BED472266AEF0A001C3990 /* InstagramCloneUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramCloneUITests.swift; sourceTree = "<group>"; };
 		D7BED474266AEF0A001C3990 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D7BED488266AF555001C3990 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D7BED48B266B052E001C3990 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DD982C1C918F3D8720077A92 /* Pods_InstagramClone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstagramClone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -109,7 +113,6 @@
 				4E49EE8BCE7F01DE9606FFAF /* Pods-InstagramCloneTests.debug.xcconfig */,
 				BB5D8F0E537299B0C3A0BFFE /* Pods-InstagramCloneTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -138,6 +141,7 @@
 		D7BED44F266AEF08001C3990 /* InstagramClone */ = {
 			isa = PBXGroup;
 			children = (
+				D7BED488266AF555001C3990 /* GoogleService-Info.plist */,
 				D7BED485266AEF9B001C3990 /* Views */,
 				D7BED484266AEF3B001C3990 /* Resources */,
 				D7BED483266AEF32001C3990 /* Managers */,
@@ -201,6 +205,7 @@
 			children = (
 				D7BED450266AEF08001C3990 /* AppDelegate.swift */,
 				D7BED452266AEF08001C3990 /* SceneDelegate.swift */,
+				D7BED48B266B052E001C3990 /* GoogleService-Info.plist */,
 				D7BED459266AEF0A001C3990 /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -323,7 +328,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7BED45D266AEF0A001C3990 /* LaunchScreen.storyboard in Resources */,
+				D7BED48C266B052E001C3990 /* GoogleService-Info.plist in Resources */,
 				D7BED45A266AEF0A001C3990 /* Assets.xcassets in Resources */,
+				D7BED489266AF555001C3990 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
