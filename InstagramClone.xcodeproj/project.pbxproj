@@ -23,7 +23,7 @@
 		D7BED494266B05F2001C3990 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BED493266B05F2001C3990 /* ProfileViewController.swift */; };
 		D7BED496266B0620001C3990 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BED495266B0620001C3990 /* TabBarController.swift */; };
 		D7BED49A266B0651001C3990 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BED499266B0651001C3990 /* SignInViewController.swift */; };
-		D7BED49C266B0660001C3990 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BED49B266B0660001C3990 /* SignUpViewController.swift */; };
+		D7BED49C266B0660001C3990 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BED49B266B0660001C3990 /* CreateAccountViewController.swift */; };
 		D7BED49E266B0679001C3990 /* CaptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BED49D266B0679001C3990 /* CaptionViewController.swift */; };
 		D7BED4A0266B0685001C3990 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BED49F266B0685001C3990 /* ListViewController.swift */; };
 		D7BED4A2266B0695001C3990 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BED4A1266B0695001C3990 /* PostViewController.swift */; };
@@ -88,7 +88,7 @@
 		D7BED493266B05F2001C3990 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		D7BED495266B0620001C3990 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		D7BED499266B0651001C3990 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
-		D7BED49B266B0660001C3990 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		D7BED49B266B0660001C3990 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		D7BED49D266B0679001C3990 /* CaptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptionViewController.swift; sourceTree = "<group>"; };
 		D7BED49F266B0685001C3990 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		D7BED4A1266B0695001C3990 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
@@ -292,7 +292,7 @@
 			isa = PBXGroup;
 			children = (
 				D7BED499266B0651001C3990 /* SignInViewController.swift */,
-				D7BED49B266B0660001C3990 /* SignUpViewController.swift */,
+				D7BED49B266B0660001C3990 /* CreateAccountViewController.swift */,
 				D7BED49D266B0679001C3990 /* CaptionViewController.swift */,
 				D7BED49F266B0685001C3990 /* ListViewController.swift */,
 				D7BED4A1266B0695001C3990 /* PostViewController.swift */,
@@ -551,7 +551,7 @@
 				D7BED490266B05D9001C3990 /* CameraViewController.swift in Sources */,
 				D7BED4B4266B0733001C3990 /* AnalyticsManager.swift in Sources */,
 				D7BED455266AEF08001C3990 /* HomeViewController.swift in Sources */,
-				D7BED49C266B0660001C3990 /* SignUpViewController.swift in Sources */,
+				D7BED49C266B0660001C3990 /* CreateAccountViewController.swift in Sources */,
 				D7BED4A6266B06BF001C3990 /* User.swift in Sources */,
 				D7BED492266B05E4001C3990 /* NotificationsViewController.swift in Sources */,
 				D7BED4A4266B06A1001C3990 /* SettingsViewController.swift in Sources */,

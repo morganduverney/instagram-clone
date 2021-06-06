@@ -1,5 +1,5 @@
 //
-//  SignInViewController.swift
+//  CreateAccountSiViewController.swift
 //  InstagramClone
 //
 //  Created by Morgan Duverney on 6/4/21.
@@ -8,9 +8,26 @@
 import SafariServices
 import UIKit
 
-class SignInViewController: UIViewController, UITextFieldDelegate {
+class CreateAccountViewController: UIViewController, UITextFieldDelegate {
     
-    private let headerView = SignInHeaderView()
+    private let profilePictureImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.tintColor = .label
+        imageView.image = UIImage(systemName: "person.circle")
+        imageView.contentMode = .scaleToFill
+        imageView.layer.masksToBounds = true
+        imageView.layer.cornerRadius = 45
+        return imageView
+    }()
+    
+    private let usernameField: CustomTextField = {
+        let field = CustomTextField()
+        field.placeholder = "Username"
+        field.keyboardType = .default
+        field.returnKeyType = .next
+        field.autocorrectionType = .no
+        return field
+    }()
     
     private let emailField: CustomTextField = {
         let field = CustomTextField()
@@ -23,7 +40,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     
     private let passwordField: CustomTextField = {
         let field = CustomTextField()
-        field.placeholder = "Password"
+        field.placeholder = "Create Password"
         field.keyboardType = .default
         field.isSecureTextEntry = true
         field.returnKeyType = .continue
@@ -31,19 +48,12 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         return field
     }()
     
-    private let signInButton: UIButton = {
-        let button = UIButton()
-        button.setTitle("Sign In", for: .normal)
-        button.backgroundColor = .systemBlue
-        button.layer.cornerRadius = 8
-        button.layer.masksToBounds = true
-        return button
-    }()
-    
     private let createAccountButton: UIButton = {
         let button = UIButton()
-        button.setTitleColor(.link, for: .normal)
         button.setTitle("Create Account", for: .normal)
+        button.backgroundColor = .systemGreen
+        button.layer.cornerRadius = 8
+        button.layer.masksToBounds = true
         return button
     }()
     
@@ -65,20 +75,21 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Sign In"
+        title = "Create Account"
         view.backgroundColor = .systemBackground
         addSubviews()
         
+        usernameField.delegate = self
         emailField.delegate = self
         passwordField.delegate = self
         addButtonActions()
     }
     
     private func addSubviews() {
-        view.addSubview(headerView)
+        view.addSubview(profilePictureImageView)
+        view.addSubview(usernameField)
         view.addSubview(emailField)
         view.addSubview(passwordField)
-        view.addSubview(signInButton)
         view.addSubview(createAccountButton)
         view.addSubview(termsOfServiceButton)
         view.addSubview(privacyPolicyButton)
@@ -87,17 +98,17 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     // TODO: Use constraints instead of frames
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        headerView.frame = CGRect(x:0, y:view.safeAreaInsets.top, width: view.width, height: (view.height - view.safeAreaInsets.top)/3)
-        emailField.frame = CGRect(x: 25, y: headerView.bottom+20, width: view.width-50, height: 50)
-        passwordField.frame = CGRect(x: 25, y: emailField.bottom+20, width: view.width-50, height: 50)
-        signInButton.frame = CGRect(x: 45, y: passwordField.bottom+20, width: view.width-90, height: 50)
-        createAccountButton.frame = CGRect(x: 45, y: signInButton.bottom+10, width: view.width-90, height: 50)
+        let imageSize: CGFloat = 90
+        profilePictureImageView.frame = CGRect(x:(view.width - imageSize)/2, y:view.safeAreaInsets.top + 10, width: imageSize, height: imageSize)
+        usernameField.frame = CGRect(x: 25, y: profilePictureImageView.bottom+20, width: view.width-50, height: 50)
+        emailField.frame = CGRect(x: 25, y: usernameField.bottom+10, width: view.width-50, height: 50)
+        passwordField.frame = CGRect(x: 25, y: emailField.bottom+10, width: view.width-50, height: 50)
+        createAccountButton.frame = CGRect(x: 45, y: passwordField.bottom+10, width: view.width-90, height: 50)
         termsOfServiceButton.frame = CGRect(x: 45, y: createAccountButton.bottom+40, width: view.width-90, height: 50)
         privacyPolicyButton.frame = CGRect(x: 45, y: termsOfServiceButton.bottom+5, width: view.width-90, height: 50)
     }
     
     private func addButtonActions() {
-        signInButton.addTarget(self, action: #selector(didTapSignIn), for: .touchUpInside)
         createAccountButton.addTarget(self, action: #selector(didTapCreateAccount), for: .touchUpInside)
         termsOfServiceButton.addTarget(self, action: #selector(didTapTermsOfService), for: .touchUpInside)
         privacyPolicyButton.addTarget(self, action: #selector(didTapPrivacyPolicy), for: .touchUpInside)
@@ -105,15 +116,10 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: - Actions -
     
-    @objc func didTapSignIn() {
+    @objc func didTapCreateAccount() {
+        usernameField.resignFirstResponder()
         emailField.resignFirstResponder()
         passwordField.resignFirstResponder()
-        signIn()
-    }
-    
-    @objc func didTapCreateAccount() {
-        let viewController = CreateAccountViewController()
-        navigationController?.pushViewController(viewController, animated: true)
     }
     
     @objc func didTapTermsOfService() {
@@ -128,7 +134,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         present(viewController, animated: true)
     }
     
-    private func signIn() {
+    private func createAccount() {
         guard let email = emailField.text,
               let password = passwordField.text,
               !email.trimmingCharacters(in: .whitespaces).isEmpty,
@@ -142,12 +148,15 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     // MARK: - Field Delegate -
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if textField == emailField {
+        if textField == usernameField {
+            emailField.becomeFirstResponder()
+        }
+        else if textField == emailField {
             passwordField.becomeFirstResponder()
         } else {
             textField.resignFirstResponder()
         }
-        signIn()
+        createAccount()
         return true
     }
 }
