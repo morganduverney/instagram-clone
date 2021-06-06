@@ -8,7 +8,7 @@
 import SafariServices
 import UIKit
 
-class CreateAccountViewController: UIViewController, UITextFieldDelegate {
+class CreateAccountViewController: UIViewController {
     
     private let profilePictureImageView: UIImageView = {
         let imageView = UIImageView()
@@ -17,6 +17,7 @@ class CreateAccountViewController: UIViewController, UITextFieldDelegate {
         imageView.contentMode = .scaleToFill
         imageView.layer.masksToBounds = true
         imageView.layer.cornerRadius = 45
+        
         return imageView
     }()
     
@@ -71,6 +72,8 @@ class CreateAccountViewController: UIViewController, UITextFieldDelegate {
         return button
     }()
     
+    public var completion: (() -> Void)?
+    
     // MARK: - Lifecycle -
     
     override func viewDidLoad() {
@@ -82,7 +85,9 @@ class CreateAccountViewController: UIViewController, UITextFieldDelegate {
         usernameField.delegate = self
         emailField.delegate = self
         passwordField.delegate = self
+        
         addButtonActions()
+        addImageAction()
     }
     
     private func addSubviews() {
@@ -114,12 +119,50 @@ class CreateAccountViewController: UIViewController, UITextFieldDelegate {
         privacyPolicyButton.addTarget(self, action: #selector(didTapPrivacyPolicy), for: .touchUpInside)
     }
     
+    private func addImageAction() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(didTapImage))
+        profilePictureImageView.isUserInteractionEnabled = true
+        profilePictureImageView.addGestureRecognizer(tap)
+    }
+    
     // MARK: - Actions -
+    
+    @objc func didTapImage() {
+        let sheet = UIAlertController(
+            title: "Profile Picture",
+            message: "Set a picture to help your friends find you.",
+            preferredStyle: .actionSheet
+        )
+
+        sheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        sheet.addAction(UIAlertAction(title: "Take Photo", style: .default, handler: { [weak self] _ in
+
+            DispatchQueue.main.async {
+                let picker = UIImagePickerController()
+                picker.sourceType = .camera
+                picker.allowsEditing = true
+                picker.delegate = self
+                self?.present(picker, animated: true)
+            }
+        }))
+        sheet.addAction(UIAlertAction(title: "Choose Photo", style: .default, handler: { [weak self] _ in
+            DispatchQueue.main.async {
+                let picker = UIImagePickerController()
+                picker.allowsEditing = true
+                picker.sourceType = .photoLibrary
+                picker.delegate = self
+                self?.present(picker, animated: true)
+            }
+        }))
+        present(sheet, animated: true)
+    }
     
     @objc func didTapCreateAccount() {
         usernameField.resignFirstResponder()
         emailField.resignFirstResponder()
         passwordField.resignFirstResponder()
+        
+        createAccount()
     }
     
     @objc func didTapTermsOfService() {
@@ -135,17 +178,40 @@ class CreateAccountViewController: UIViewController, UITextFieldDelegate {
     }
     
     private func createAccount() {
-        guard let email = emailField.text,
+        guard let username = usernameField.text,
+              let email = emailField.text,
               let password = passwordField.text,
+              !username.trimmingCharacters(in: .whitespaces).isEmpty,
+              username.trimmingCharacters(in: .alphanumerics).isEmpty,
               !email.trimmingCharacters(in: .whitespaces).isEmpty,
               !password.trimmingCharacters(in: .whitespaces).isEmpty,
-              password.count >= 6 else {
+              password.count >= 6
+        else {
+            let alert = UIAlertController(title: "Oops!", message: "Please check that all fields are populated and the password contains at least 6 characters.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
+            present(alert, animated: true)
             return
         }
-        // TODO: Sign in with auth manager
+        let data = profilePictureImageView.image?.pngData()
+        
+        AuthManager.shared.createAccount(email: email, username: username, profilePicture: data, password: password) { [weak self] result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let user):
+                    UserDefaults.standard.setValue(user.email, forKey: "email")
+                    UserDefaults.standard.setValue(user.username, forKey: "username")
+
+                    self?.navigationController?.popToRootViewController(animated: true)
+                    self?.completion?()
+                case .failure(let error):
+                    print("\n\nSign Up Error: \(error)")
+                }
+            }
+        }
     }
+}
     
-    // MARK: - Field Delegate -
+extension CreateAccountViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == usernameField {
@@ -158,5 +224,20 @@ class CreateAccountViewController: UIViewController, UITextFieldDelegate {
         }
         createAccount()
         return true
+    }
+}
+
+extension CreateAccountViewController: UIImagePickerControllerDelegate,
+                                       UINavigationControllerDelegate {
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
+
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        picker.dismiss(animated: true, completion: nil)
+        guard let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage else {
+            return
+        }
+        profilePictureImageView.image = image
     }
 }

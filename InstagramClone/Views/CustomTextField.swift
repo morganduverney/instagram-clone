@@ -17,6 +17,8 @@ class CustomTextField: UITextField {
         layer.cornerRadius = 8
         layer.borderWidth = 1
         layer.borderColor = UIColor.secondaryLabel.cgColor
+        autocorrectionType = .no
+        autocapitalizationType = .none
     }
     
     required init?(coder: NSCoder) {
