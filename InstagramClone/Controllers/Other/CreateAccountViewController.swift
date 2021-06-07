@@ -187,9 +187,7 @@ class CreateAccountViewController: UIViewController {
               !password.trimmingCharacters(in: .whitespaces).isEmpty,
               password.count >= 6
         else {
-            let alert = UIAlertController(title: "Oops!", message: "Please check that all fields are populated and the password contains at least 6 characters.", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
-            present(alert, animated: true)
+            displayError()
             return
         }
         let data = profilePictureImageView.image?.pngData()
@@ -198,16 +196,27 @@ class CreateAccountViewController: UIViewController {
             DispatchQueue.main.async {
                 switch result {
                 case .success(let user):
-                    UserDefaults.standard.setValue(user.email, forKey: "email")
-                    UserDefaults.standard.setValue(user.username, forKey: "username")
-
-                    self?.navigationController?.popToRootViewController(animated: true)
-                    self?.completion?()
+                    self?.signInNewUser(user: user)
                 case .failure(let error):
                     print("\n\nSign Up Error: \(error)")
                 }
             }
         }
+    }
+    
+    private func displayError() {
+        let alert = UIAlertController(title: "Oops!", message: "Please check that all fields are populated and the password contains at least 6 characters.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
+        present(alert, animated: true)
+    }
+    
+    private func signInNewUser(user: User) {
+        // TODO: Store in keychain
+        UserDefaults.standard.setValue(user.email, forKey: "email")
+        UserDefaults.standard.setValue(user.username, forKey: "username")
+
+        self.navigationController?.popToRootViewController(animated: true)
+        self.completion?()
     }
 }
     
